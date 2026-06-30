@@ -1,4 +1,5 @@
 * {
+  padding: 0;
   margin: 0;
 }
 
@@ -6,6 +7,7 @@
   width: 500px;
   height: 200px;
   border: 1px solid black;
+  margin: auto;
   position: relative;
 }
 
@@ -18,17 +20,30 @@
 }
 
 #obstacle {
+  animation: slide 1.5s infinite linear;
   width: 20px;
-  height: 20px;
-  background-color: blue;
   position: absolute;
   bottom: 0px;
   left: 480px;
-  animation: slide 2s infinite;
 }
 
-.animate {
-  animation: jump 500ms;
+.small {
+  height: 20px;
+  background-color: blue;
+}
+
+.mid {
+  height: 30px;
+  background-color: green;
+}
+
+.large {
+  height: 40px;
+  background-color: yellow;
+}
+
+.jump {
+  animation: jump 0.5s linear;
 }
 
 @keyframes slide {
@@ -39,6 +54,7 @@
 @keyframes jump {
   0%{top: 150px;}
   30%{top: 100px;}
-  70%{top: 100px;}
+  50%{top: 70px;}
+  80%{top: 100px;}
   100%{top: 150px;}
 }

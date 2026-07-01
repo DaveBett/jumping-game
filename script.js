@@ -89,4 +89,8 @@ function game() {
   monitorCollision();
 }
 
+function restartGame(){
+    location.reload();
+}
+
 game();

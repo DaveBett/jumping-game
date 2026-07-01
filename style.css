@@ -31,10 +31,10 @@
 
 #score{
   position: absolute;
-  top:10px
-  left:10px
+  top:10px;
+  left:10px;
   font-size: 22px;
-  font weight:bold;
+  font-weight:bold;
 }
 
 #gameOver{
@@ -86,9 +86,9 @@ button{
 }
 
 @keyframes jump {
-  0%{top: 150px;}
-  30%{top: 100px;}
-  50%{top: 70px;}
-  80%{top: 100px;}
-  100%{top: 150px;}
+  0%{bottom: 0;}
+  30%{bottom: 60px;}
+  50%{bottom: 90px;}
+  80%{bottom: 60px;}
+  100%{bottom: 0;}
 }

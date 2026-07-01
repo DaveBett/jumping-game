@@ -7,7 +7,7 @@ let score = 0;
 let highScore = 0;
 
 function getRandomObstacleSize() {
-    i = Math.floor(Math.random() * (sizes.length));
+    let i = Math.floor(Math.random() * (sizes.length));
     return sizes[i];
 }
 

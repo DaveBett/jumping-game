@@ -64,8 +64,9 @@ function monitorCollision() {
       setHighScore();
       alert(`Game Over.\nYour Score: ${score}\nCurrent highscore: ${highScore}`);
       score = 0;
+      obstacle.setAttribute('class', 'paused')
     }
-  }, 10);
+  }, 20);
 }
 
 function jump() {
@@ -81,16 +82,22 @@ function jump() {
   });
 }
 
+function gameRules() {
+  alert
+  ("Welcome to the Jumping Game \n" +
+    "The rules are simple: \n" +
+    "Use Spacebar to jump over the incoming obstacles \n" +
+    "Survive as long as you can!"
+  );
+}
+
 function game() {
+  gameRules();
   jump();
   randomizeSize();
   scoreUp();
   //speedUp();
   monitorCollision();
-}
-
-function restartGame(){
-    location.reload();
 }
 
 game();

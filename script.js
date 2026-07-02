@@ -17,7 +17,7 @@ function randomizeSize() {
   setInterval(() => {
     const size = getRandomObstacleSize();
     obstacle.className = `${size}`
-  }, 1500)
+  }, 1499)
 }
 
 function setHighScore() {

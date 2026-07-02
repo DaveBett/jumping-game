@@ -5,6 +5,8 @@ const highScoreDisplay = document.getElementById("high-score");
 const sizes = ["small", "medium", "large"];
 let score = 0;
 let highScore = 0;
+let music = document.getElementById("mainTheme");
+let sfx = document.getElementById("death");
 
 function getRandomObstacleSize() {
     let i = Math.floor(Math.random() * (sizes.length));
@@ -62,9 +64,12 @@ function monitorCollision() {
   setInterval(() => {
     if (checkGameOver()) {
       setHighScore();
+      pauseSound(music);
+      playSound(sfx);
+      obstacle.setAttribute('class', 'paused');
       alert(`Game Over.\nYour Score: ${score}\nCurrent highscore: ${highScore}`);
       score = 0;
-      obstacle.setAttribute('class', 'paused')
+      restartSound(music);
     }
   }, 20);
 }
@@ -91,8 +96,23 @@ function gameRules() {
   );
 }
 
+function playSound(soundFile) {
+  soundFile.volume = 0.2;
+  soundFile.play();
+}
+
+function restartSound(soundFile) {
+  soundFile.currentTime = 0;
+  soundFile.play();
+}
+
+function pauseSound(soundFile) {
+  soundFile.pause();
+}
+
 function game() {
   gameRules();
+  playSound(music);
   jump();
   randomizeSize();
   scoreUp();
